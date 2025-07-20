@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+long int power(int x, int n) {
+    if (n == 0)
+        return 1;
+    else if (n % 2 == 0)
+        return power(x, n / 2) * power(x, n / 2);
+    else
+        return x * power(x, (n - 1) / 2) * power(x, (n - 1) / 2);
+}
+
+int main() {
+    int x, y;
+
+    printf("Enter Number: ");
+    scanf("%d", &x);
+
+    printf("Enter Power: ");
+    scanf("%d", &y);
+
+    printf("%d^%d = %ld\n", x, y, power(x, y));
+
+    return 0;
+}
